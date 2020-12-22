@@ -1,0 +1,23 @@
+program sortirovka_puz;
+const n = 20;
+var V:array[1..n] of integer;
+    i,j,tmp:integer;
+begin
+Randomize;
+ for i:=1 to n do 
+  V[i]:= Random(100);
+Writeln('Vvedite massiv dannuh: ');
+ for i:=1 to n do Write(V[i],' ');
+ for i:=1 to n-1 do 
+  for j:=i+1 to n do
+   if V[i] >= V[j] then begin
+                     	tmp:= V[i]; 
+	             	V[i]:= V[j]; 
+		     	V[j]:= tmp;
+           	     	end;
+Writeln;
+Writeln('Uporiadochnui massiv: ');
+ for i:=1 to n do Write(V[i],' ');
+Readln;
+End.
+
